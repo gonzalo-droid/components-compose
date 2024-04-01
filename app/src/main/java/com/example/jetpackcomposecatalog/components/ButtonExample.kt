@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog
+package com.example.jetpackcomposecatalog.components
 
 import android.util.Log
 import androidx.compose.foundation.BorderStroke

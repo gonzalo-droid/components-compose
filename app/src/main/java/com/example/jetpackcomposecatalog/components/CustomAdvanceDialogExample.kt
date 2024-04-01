@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog
+package com.example.jetpackcomposecatalog.components
 
 import android.util.Log
 import androidx.annotation.DrawableRes
@@ -25,13 +25,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import com.example.jetpackcomposecatalog.R
 
 
 @Preview(showBackground = true)

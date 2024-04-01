@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog
+package com.example.jetpackcomposecatalog.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll

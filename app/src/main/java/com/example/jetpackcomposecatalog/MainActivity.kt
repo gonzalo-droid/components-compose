@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.jetpackcomposecatalog.components.MyAlertDialogPreview
 import com.example.jetpackcomposecatalog.ui.theme.JetpackComposeCatalogTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,22 +25,13 @@ class MainActivity : ComponentActivity() {
                 ) {
 
                     Column(modifier = Modifier.fillMaxSize()) {
-                        MyAlertDialogPreview()
+                        LoginScreen()
                     }
                 }
             }
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    JetpackComposeCatalogTheme {
-
-    }
-}
-
 
 
 

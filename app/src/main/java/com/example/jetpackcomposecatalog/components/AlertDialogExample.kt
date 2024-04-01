@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
+@Preview(showBackground = true)
 @Composable
 fun MyAlertDialogPreview() {
 
@@ -38,7 +39,10 @@ fun MyAlertDialogPreview() {
         Button(onClick = { isShow = true }) {
             Text(text = "Show dialog")
         }
-        MyAlertDialog(isShow = isShow, onDismiss = {isShow=false}, onConfirm = { Log.i("GonDev","click Dialog")})
+        MyAlertDialog(
+            isShow = isShow,
+            onDismiss = { isShow = false },
+            onConfirm = { Log.i("GonDev", "click Dialog") })
     }
 }
 
@@ -57,7 +61,7 @@ fun MyAlertDialog(isShow: Boolean, onDismiss: () -> Unit, onConfirm: () -> Unit)
             },
             dismissButton = {
                 TextButton(onClick = { onDismiss() }) {
-                    Text(text = "Dimiss")
+                    Text(text = "Dismiss")
                 }
             },
             icon = {

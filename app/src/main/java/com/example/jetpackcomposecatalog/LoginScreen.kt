@@ -1,6 +1,7 @@
 package com.example.jetpackcomposecatalog
 
 import android.app.Activity
+import android.util.Patterns
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,11 +18,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -40,9 +43,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import java.util.regex.Pattern
 
 @Preview(showBackground = true)
 @Composable
@@ -88,9 +94,15 @@ fun Body(modifier: Modifier) {
     Column(modifier = modifier) {
         ImageLogo(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.size(16.dp))
-        Email(email) { email = it }
+        Email(email) {
+            email = it
+            isLoginEnable=enableLogin(email, password)
+        }
         Spacer(modifier = Modifier.size(4.dp))
-        Password(password) { password = it }
+        Password(password) {
+            password = it
+            isLoginEnable=enableLogin(email, password)
+        }
         Spacer(modifier = Modifier.size(8.dp))
         ForgotPassword(Modifier.align(Alignment.End))
         Spacer(modifier = Modifier.size(16.dp))
@@ -154,10 +166,23 @@ fun LoginDivider() {
 
 @Composable
 fun LoginButton(loginEnable: Boolean) {
-    Button(onClick = { }, enabled = loginEnable, modifier = Modifier.fillMaxWidth()) {
+    Button(
+        onClick = { },
+        enabled = loginEnable,
+        modifier = Modifier.fillMaxWidth(),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color(0xFF4EA8E9),
+            contentColor = Color.White,
+            disabledContainerColor = Color(0xFF78C8F9),
+            disabledContentColor = Color.Red
+        )
+    ) {
         Text(text = "Log In")
     }
 }
+
+fun enableLogin(email: String, password: String): Boolean =
+    Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 6
 
 @Composable
 fun ForgotPassword(modifier: Modifier) {
@@ -171,7 +196,6 @@ fun ForgotPassword(modifier: Modifier) {
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Password(password: String, onTextChanged: (String) -> Unit) {
     var passWordVisibility by remember {
@@ -185,22 +209,30 @@ fun Password(password: String, onTextChanged: (String) -> Unit) {
         maxLines = 1,
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-        colors = TextFieldDefaults.textFieldColors(
-            textColor = Color(0XFFB2B2B2),
-            containerColor = Color(0xFFFAFAFA),
+        colors = TextFieldDefaults.colors(
+            unfocusedTextColor = Color(0XFFB2B2B2),
+            unfocusedContainerColor = Color(0xFFFAFAFA),
+            focusedTextColor = Color(0XFFB2B2B2),
+            focusedContainerColor = Color(0xFFFAFAFA),
+
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
         ),
         trailingIcon = {
-            val image = if (passWordVisibility){
-                Icons.Filled.Favorite
-            }else{
-                Icons.Filled.FavoriteBorder
+            val image = if (passWordVisibility) {
+                Icons.Filled.VisibilityOff
+            } else {
+                Icons.Filled.Visibility
             }
 
-            IconButton(onClick = { passWordVisibility = !passWordVisibility } ) {
+            IconButton(onClick = { passWordVisibility = !passWordVisibility }) {
                 Icon(imageVector = image, contentDescription = "show password")
             }
+        },
+        visualTransformation = if (passWordVisibility) {
+            VisualTransformation.None
+        } else {
+            PasswordVisualTransformation()
         }
     )
 }
@@ -216,9 +248,12 @@ fun Email(email: String, onTextChanged: (String) -> Unit) {
         maxLines = 1,
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-        colors = TextFieldDefaults.textFieldColors(
-            textColor = Color(0XFFB2B2B2),
-            containerColor = Color(0xFFFAFAFA),
+        colors = TextFieldDefaults.colors(
+            unfocusedTextColor = Color(0XFFB2B2B2),
+            unfocusedContainerColor = Color(0xFFFAFAFA),
+            focusedTextColor = Color(0XFFB2B2B2),
+            focusedContainerColor = Color(0xFFFAFAFA),
+
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
         )
@@ -237,7 +272,7 @@ fun ImageLogo(modifier: Modifier) {
 @Composable
 fun Footer(modifier: Modifier) {
     Column(modifier = modifier.fillMaxWidth()) {
-        Divider(
+        HorizontalDivider(
             Modifier
                 .background(Color(0xFFF9F9F9))
                 .height(1.dp)

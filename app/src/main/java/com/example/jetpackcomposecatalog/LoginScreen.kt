@@ -173,8 +173,8 @@ fun LoginButton(loginEnable: Boolean) {
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFF4EA8E9),
             contentColor = Color.White,
-            disabledContainerColor = Color(0xFF78C8F9),
-            disabledContentColor = Color.Red
+            disabledContainerColor = Color(0xFFC4E9FF),
+            disabledContentColor = Color.White
         )
     ) {
         Text(text = "Log In")

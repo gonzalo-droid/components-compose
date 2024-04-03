@@ -154,7 +154,7 @@ fun LoginDivider() {
             color = Color(0xFFB5B5B5)
         )
 
-        Divider(
+        HorizontalDivider(
             Modifier
                 .background(Color(0xFFF9F9F9))
                 .height(1.dp)

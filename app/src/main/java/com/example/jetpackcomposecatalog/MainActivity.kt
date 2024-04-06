@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.jetpackcomposecatalog.components.MyAlertDialogPreview
+import com.example.jetpackcomposecatalog.recyclerView.SimpleRecyclerView
+import com.example.jetpackcomposecatalog.recyclerView.SuperHeroRecyclerView
 import com.example.jetpackcomposecatalog.ui.theme.JetpackComposeCatalogTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,7 +27,7 @@ class MainActivity : ComponentActivity() {
                 ) {
 
                     Column(modifier = Modifier.fillMaxSize()) {
-                        LoginScreen()
+                        SuperHeroRecyclerView()
                     }
                 }
             }

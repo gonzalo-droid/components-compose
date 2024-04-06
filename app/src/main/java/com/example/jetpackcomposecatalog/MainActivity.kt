@@ -5,14 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.jetpackcomposecatalog.components.MyAlertDialogPreview
-import com.example.jetpackcomposecatalog.recyclerView.SimpleRecyclerView
-import com.example.jetpackcomposecatalog.recyclerView.SuperHeroRecyclerView
+import androidx.compose.ui.unit.dp
+import com.example.jetpackcomposecatalog.recyclerView.MonaRecyclerView
 import com.example.jetpackcomposecatalog.ui.theme.JetpackComposeCatalogTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,8 +24,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    Column(modifier = Modifier.fillMaxSize()) {
-                        SuperHeroRecyclerView()
+                    Column(modifier = Modifier.fillMaxSize().padding(4.dp)) {
+                        MonaRecyclerView()
                     }
                 }
             }

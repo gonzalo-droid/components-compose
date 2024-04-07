@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.jetpackcomposecatalog.componentsAndroid.ScaffoldComponent
 import com.example.jetpackcomposecatalog.recyclerView.MonaRecyclerView
 import com.example.jetpackcomposecatalog.ui.theme.JetpackComposeCatalogTheme
 
@@ -24,8 +25,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    Column(modifier = Modifier.fillMaxSize().padding(4.dp)) {
-                        MonaRecyclerView()
+                    Column(modifier = Modifier.fillMaxSize()) {
+                        ScaffoldComponent()
                     }
                 }
             }

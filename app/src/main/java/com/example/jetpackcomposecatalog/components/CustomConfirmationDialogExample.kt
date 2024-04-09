@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -69,7 +70,7 @@ fun CustomConfirmationAlertDialog(isShow: Boolean, onDismiss: () -> Unit, onConf
                         .fillMaxWidth()
                 ) {
                     MyTitle(text = "Phone ringtone", modifier = Modifier.padding(24.dp))
-                    Divider(modifier = Modifier.fillMaxWidth(), color = Color.LightGray)
+                    HorizontalDivider(modifier = Modifier.fillMaxWidth(), color = Color.LightGray)
                     var status by remember {
                         mutableStateOf("Jupiter")
                     }
@@ -77,7 +78,7 @@ fun CustomConfirmationAlertDialog(isShow: Boolean, onDismiss: () -> Unit, onConf
                         status = it
                     }
 
-                    Divider(modifier = Modifier.fillMaxWidth(), color = Color.LightGray)
+                    HorizontalDivider(modifier = Modifier.fillMaxWidth(), color = Color.LightGray)
 
                     Row(
                         modifier = Modifier

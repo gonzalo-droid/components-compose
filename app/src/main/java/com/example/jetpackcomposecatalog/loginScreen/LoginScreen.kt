@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog
+package com.example.jetpackcomposecatalog.loginScreen
 
 import android.app.Activity
 import android.util.Patterns
@@ -48,7 +48,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import java.util.regex.Pattern
+import com.example.jetpackcomposecatalog.R
 
 @Preview(showBackground = true)
 @Composable
@@ -96,12 +96,12 @@ fun Body(modifier: Modifier) {
         Spacer(modifier = Modifier.size(16.dp))
         Email(email) {
             email = it
-            isLoginEnable=enableLogin(email, password)
+            isLoginEnable= enableLogin(email, password)
         }
         Spacer(modifier = Modifier.size(4.dp))
         Password(password) {
             password = it
-            isLoginEnable=enableLogin(email, password)
+            isLoginEnable= enableLogin(email, password)
         }
         Spacer(modifier = Modifier.size(8.dp))
         ForgotPassword(Modifier.align(Alignment.End))

@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="CustomAdvanceAlertDialogPreview">
+        <State />
+      </entry>
+      <entry key="CustomConfirmationAlertDialogPreview (1)">
+        <State />
+      </entry>
       <entry key="MainActivity">
         <State>
           <targetSelectedWithDropDown>
@@ -18,21 +24,11 @@
           <timeTargetWasSelectedWithDropDown value="2024-04-06T17:45:11.171828Z" />
         </State>
       </entry>
-      <entry key="TwitterScreen">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="$USER_HOME$/.android/avd/Pixel_7_API_33.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-04-03T02:59:59.532678Z" />
-        </State>
+      <entry key="MyAlertDialogPreview">
+        <State />
+      </entry>
+      <entry key="MyCustomAlertDialogPreview">
+        <State />
       </entry>
       <entry key="app">
         <State>

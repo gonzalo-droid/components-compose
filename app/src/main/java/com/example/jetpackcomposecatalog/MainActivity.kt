@@ -7,19 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import com.example.jetpackcomposecatalog.loginScreen.LoginScreen
-import com.example.jetpackcomposecatalog.loginScreen.LoginViewModel
-import com.example.jetpackcomposecatalog.navigation.Routes.*
-import com.example.jetpackcomposecatalog.navigation.Screen1
-import com.example.jetpackcomposecatalog.navigation.Screen2
-import com.example.jetpackcomposecatalog.navigation.Screen3
-import com.example.jetpackcomposecatalog.navigation.Screen4
-import com.example.jetpackcomposecatalog.navigation.Screen5
+import com.example.jetpackcomposecatalog.loginScreen.ui.LoginScreen
+import com.example.jetpackcomposecatalog.loginScreen.ui.LoginViewModel
 import com.example.jetpackcomposecatalog.ui.theme.JetpackComposeCatalogTheme
 
 class MainActivity : ComponentActivity() {

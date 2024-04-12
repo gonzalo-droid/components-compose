@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog.loginScreen
+package com.example.jetpackcomposecatalog.loginScreen.ui
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData

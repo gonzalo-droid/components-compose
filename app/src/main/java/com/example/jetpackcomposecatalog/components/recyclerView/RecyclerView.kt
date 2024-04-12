@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog.recyclerView
+package com.example.jetpackcomposecatalog.components.recyclerView
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow

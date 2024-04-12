@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog.navigation
+package com.example.jetpackcomposecatalog.components.navigation
 
 sealed class Routes(val route: String) {
 

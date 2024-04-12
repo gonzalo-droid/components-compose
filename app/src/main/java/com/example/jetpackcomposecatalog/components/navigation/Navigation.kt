@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog.navigation
+package com.example.jetpackcomposecatalog.components.navigation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

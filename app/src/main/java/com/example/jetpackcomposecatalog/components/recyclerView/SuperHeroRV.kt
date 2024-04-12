@@ -1,4 +1,4 @@
-package com.example.jetpackcomposecatalog.recyclerView
+package com.example.jetpackcomposecatalog.components.recyclerView
 
 import android.content.Context
 import android.widget.Toast

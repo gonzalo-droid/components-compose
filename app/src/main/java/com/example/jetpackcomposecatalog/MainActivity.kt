@@ -12,6 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.jetpackcomposecatalog.loginScreen.LoginScreen
+import com.example.jetpackcomposecatalog.loginScreen.LoginViewModel
 import com.example.jetpackcomposecatalog.navigation.Routes.*
 import com.example.jetpackcomposecatalog.navigation.Screen1
 import com.example.jetpackcomposecatalog.navigation.Screen2
@@ -29,6 +31,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    
+                    // Login Screen
+                    
+                    LoginScreen(viewModel = LoginViewModel())
+                    
 
                     // COMPONENTS
                     /*
@@ -38,6 +45,7 @@ class MainActivity : ComponentActivity() {
                      */
 
                     // NAVIGATION
+                    /*
                     val navigationController = rememberNavController()
 
                     NavHost(
@@ -72,6 +80,8 @@ class MainActivity : ComponentActivity() {
                         }
 
                     }
+                     */
+
                 }
             }
         }

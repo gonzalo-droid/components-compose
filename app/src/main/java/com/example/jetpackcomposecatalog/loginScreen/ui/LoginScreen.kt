@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -55,12 +56,25 @@ fun LoginScreen(viewModel: LoginViewModel) {
             .fillMaxSize()
             .padding(8.dp)
     ) {
-        Header(Modifier.align(Alignment.TopEnd))
-        Body(
-            modifier = Modifier.align(Alignment.Center),
-            viewModel = viewModel
-        )
-        Footer(Modifier.align(Alignment.BottomCenter))
+
+        val isLoading by viewModel.isLoading.observeAsState(initial = false)
+
+
+        if(isLoading){
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .align(Alignment.Center)) {
+                CircularProgressIndicator(Modifier.align(Alignment.Center))
+            }
+        }else{
+            Header(Modifier.align(Alignment.TopEnd))
+            Body(
+                modifier = Modifier.align(Alignment.Center),
+                viewModel = viewModel
+            )
+            Footer(Modifier.align(Alignment.BottomCenter))
+        }
     }
 }
 
@@ -98,7 +112,7 @@ fun Body(modifier: Modifier, viewModel: LoginViewModel) {
         Spacer(modifier = Modifier.size(8.dp))
         ForgotPassword(Modifier.align(Alignment.End))
         Spacer(modifier = Modifier.size(16.dp))
-        LoginButton(isLoginEnable)
+        LoginButton(isLoginEnable, viewModel)
         Spacer(modifier = Modifier.size(16.dp))
         LoginDivider()
         Spacer(modifier = Modifier.size(32.dp))
@@ -157,9 +171,11 @@ fun LoginDivider() {
 }
 
 @Composable
-fun LoginButton(loginEnable: Boolean) {
+fun LoginButton(loginEnable: Boolean, viewModel: LoginViewModel) {
     Button(
-        onClick = { },
+        onClick = {
+            viewModel.onLoginSelected()
+        },
         enabled = loginEnable,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
